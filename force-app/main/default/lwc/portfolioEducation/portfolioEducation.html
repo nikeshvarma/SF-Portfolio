@@ -1,0 +1,25 @@
+<template>
+    <p class="section-heading">Education</p>
+
+    <div class="slds-progress slds-progress_vertical timeline">
+        <ol class="slds-progress__list">
+            <template for:each={education} for:item="edu">
+                <li key={edu.id} class="slds-progress__item slds-is-completed">
+                    <span class="slds-icon_container slds-icon-utility-success slds-progress__marker slds-progress__marker_icon">
+                        <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#success"></use>
+                        </svg>
+                        <span class="slds-assistive-text">{edu.degree}</span>
+                    </span>
+
+                    <div class="slds-progress__item_content slds-grid slds-wrap slds-grid_align-spread custom-item">
+                        <div class="edu-left slds-col slds-size_1-of-1">
+                            <div class="edu-degree">{edu.degree} | <span class="edu-year">{edu.year}</span></div>
+                            <div class="edu-institute">{edu.institute}</div>
+                        </div>
+                    </div>
+                </li>
+            </template>
+        </ol>
+    </div>
+</template>

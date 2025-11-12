@@ -1,0 +1,19 @@
+<template>
+    <p class="section-heading">Skills</p>
+    <div class="slds-grid slds-wrap slds-gutters">
+        <template for:each={skills} for:item="skill">
+            <div key={skill.name} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_small">
+                <lightning-card title={skill.name} icon-name={skill.icon}>
+                    <div class="slds-m-around_x-small">
+                        <lightning-progress-bar value={skill.level} variant="circular"></lightning-progress-bar>
+                        <div class="skill-tags">
+                            <template for:each={skill.tags} for:item="t">
+                                <span key={t} class="tag">{t}</span>
+                            </template>
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+    </div>
+</template>

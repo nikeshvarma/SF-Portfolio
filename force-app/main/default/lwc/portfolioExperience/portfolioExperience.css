@@ -1,0 +1,29 @@
+.job-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.95rem;
+    border-radius: 10px;
+    background: var(--card-bg, #ffffff);
+    box-shadow: 0 8px 22px rgba(10, 20, 40, 0.03);
+}
+.job-left {
+    min-width: 40%;
+}
+.job-title {
+    font-weight: 700;
+}
+.job-company {
+    color: var(--muted, #6b7280);
+    margin-top: 0.25rem;
+}
+.job-dates {
+    color: var(--muted, #6b7280);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.job-bullets {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #374151;
+}

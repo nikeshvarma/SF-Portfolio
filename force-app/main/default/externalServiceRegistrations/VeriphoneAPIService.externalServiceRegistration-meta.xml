@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Verify Any Phone Number Internationally</description>
+    <label>VeriphoneAPIService</label>
+    <namedCredentialReference>Veriphone</namedCredentialReference>
+    <operations>
+        <active>true</active>
+        <name>verifyphone</name>
+    </operations>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>{
+  &quot;openapi&quot;: &quot;3.0.1&quot;,
+  &quot;info&quot;: {
+    &quot;title&quot;: &quot;Veriphone&quot;,
+    &quot;description&quot;: &quot;Phone number verification API&quot;
+  },
+  &quot;paths&quot;: {
+    &quot;/verify&quot;: {
+      &quot;get&quot;: {
+        &quot;description&quot;: &quot;Verify phone number validity and carrier details&quot;,
+        &quot;operationId&quot;: &quot;VerifyPhone&quot;,
+        &quot;parameters&quot;: [{
+            &quot;name&quot;: &quot;key&quot;,
+            &quot;in&quot;: &quot;query&quot;,
+            &quot;description&quot;: &quot;API Key&quot;,
+            &quot;required&quot;: true,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          },
+          {
+            &quot;name&quot;: &quot;phone&quot;,
+            &quot;in&quot;: &quot;query&quot;,
+            &quot;description&quot;: &quot;Phone number to verify&quot;,
+            &quot;required&quot;: true,
+            &quot;schema&quot;: {
+              &quot;type&quot;: &quot;string&quot;
+            }
+          },
+          {
+          &quot;name&quot;: &quot;default_country&quot;,
+          &quot;in&quot;: &quot;query&quot;,
+          &quot;description&quot;: &quot;Default country code&quot;,
+          &quot;required&quot;: true,
+          &quot;schema&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          }
+        }
+        ],
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;Successful response&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;type&quot;: &quot;object&quot;,
+                  &quot;properties&quot;: {
+                    &quot;status&quot;: {
+                      &quot;type&quot;: &quot;string&quot;,
+                      &quot;example&quot;: &quot;success&quot;
+                    },
+                    &quot;phone&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;phone_valid&quot;: {
+                      &quot;type&quot;: &quot;boolean&quot;
+                    },
+                    &quot;phone_type&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;phone_region&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;country&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;country_code&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;country_prefix&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;international_number&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;local_number&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;e164&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;carrier&quot;: {
+                      &quot;type&quot;: &quot;string&quot;
+                    }
+                  },
+                  &quot;required&quot;: [&quot;status&quot;, &quot;phone_valid&quot;, &quot;country&quot;]
+                }
+              }
+            }
+          },
+          &quot;default&quot;: {
+            &quot;description&quot;: &quot;Error response (applies to all non-200 responses)&quot;,
+            &quot;content&quot;: {
+              &quot;application/json&quot;: {
+                &quot;schema&quot;: {
+                  &quot;$ref&quot;: &quot;#/components/schemas/ErrorResponse&quot;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;components&quot;: {
+    &quot;schemas&quot;: {
+      &quot;ErrorResponse&quot;: {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;properties&quot;: {
+          &quot;status&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;example&quot;: &quot;error&quot;
+          },
+          &quot;code&quot;: {
+            &quot;type&quot;: &quot;integer&quot;,
+            &quot;example&quot;: 401
+          },
+          &quot;type&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;example&quot;: &quot;Unauthorized&quot;
+          },
+          &quot;message&quot;: {
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;example&quot;: &quot;An active key is required&quot;
+          }
+        },
+        &quot;required&quot;: [&quot;status&quot;, &quot;code&quot;, &quot;type&quot;, &quot;message&quot;]
+      }
+    }
+  }
+}</schema>
+    <schemaType>OpenApi3</schemaType>
+    <serviceBinding>{&quot;host&quot;:&quot;&quot;,&quot;basePath&quot;:&quot;/&quot;,&quot;allowedSchemes&quot;:[],&quot;requestMediaTypes&quot;:[],&quot;responseMediaTypes&quot;:[],&quot;compatibleMediaTypes&quot;:{},&quot;extensions&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+    <systemVersion>8</systemVersion>
+</ExternalServiceRegistration>

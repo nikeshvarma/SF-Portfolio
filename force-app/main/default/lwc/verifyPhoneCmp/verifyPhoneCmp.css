@@ -1,0 +1,21 @@
+.success-card {
+    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+    border: 1px solid #c8e6c9;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #d8dde6;
+    padding-bottom: 4px;
+}
+
+.info-item strong {
+    color: #1a1a1a;
+}
+
+.info-item span {
+    color: #2e844a;
+    font-weight: 500;
+}

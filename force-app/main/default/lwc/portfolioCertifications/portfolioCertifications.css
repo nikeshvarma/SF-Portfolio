@@ -1,0 +1,16 @@
+.cert-card {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    background: rgba(10, 165, 255, 0.03);
+    font-weight: 600;
+}
+
+.cert-content {
+    align-items: center;
+}
+
+.cert-img {
+    max-height: 60px;
+    max-width: 60px;
+    object-fit: contain;
+}

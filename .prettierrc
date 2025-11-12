@@ -1,0 +1,17 @@
+{
+    "trailingComma": "none",
+    "printWidth": 180,
+    "tabWidth": 4,
+    "bracketSameLine": true,
+    "plugins": ["prettier-plugin-apex", "@prettier/plugin-xml"],
+    "overrides": [
+        {
+            "files": "**/lwc/**/*.html",
+            "options": { "parser": "lwc" }
+        },
+        {
+            "files": "*.{cmp,page,component}",
+            "options": { "parser": "html" }
+        }
+    ]
+}

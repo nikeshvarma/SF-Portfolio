@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-grid slds-wrap slds-guttersslds-grid_align-space slds-grid_vertical-align-center">
+        <div class="profile-photo slds-col slds-size_1-of-1 slds-medium-size_2-of-6" style="display: block; width: auto; margin: 0 auto">
+            <img src={profileImageUrl} alt="Profile photo" />
+        </div>
+        <div class="profile-intro slds-col slds-size_1-of-1 slds-medium-size_4-of-6">
+            <h2 class="section-heading">About Me</h2>
+            <p class="lead">{intro}</p>
+            <div class="stat-container">
+                <div class="stat">
+                    <div class="stat-value">{yearsExp}+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">{projectsCount}</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">{certCount}</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

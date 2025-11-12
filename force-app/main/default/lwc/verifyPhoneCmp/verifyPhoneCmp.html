@@ -1,0 +1,84 @@
+<template>
+    <lightning-card title="Verify Phone Number" icon-name="standard:call">
+        <lightning-button-icon slot="actions" icon-name="utility:locker_service_console" variant="brand" alternative-text="Verify" onclick={handleVerify} disabled={isLoading}>
+        </lightning-button-icon>
+
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-end">
+                <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+                    <p>Please select your country code and fill the phone number below, then click the button at the top right corner to verify your number.</p>
+                </div>
+
+                <div class="slds-col slds-size_5-of-12 slds-large-size_3-of-12">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <div class="slds-combobox_container">
+                                <div class={computeSldsIsOpen}>
+                                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left" role="none">
+                                        <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#world"></use>
+                                        </svg>
+                                        <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="from-listbox" role="combobox" value={selectedPrefix} onfocus={toggleCountryDropdown} onkeyup={searchCountry} placeholder="+91" />
+                                    </div>
+
+                                    <div id="from-listbox" class="slds-dropdown slds-dropdown_length-with-icon-5 slds-dropdown_fluid" role="listbox" tabindex="0" aria-busy="false">
+                                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                            <template for:each={searchedCountryCodes} for:item="record">
+                                                <li
+                                                    key={record.Id}
+                                                    role="presentation"
+                                                    class="slds-listbox__item"
+                                                    onclick={handleSelectedCountry}
+                                                    data-value={record.ISOCode__c}
+                                                    data-code={record.Prefix__c}>
+                                                    <div class="slds-media slds-listbox__option slds-listbox__option_entity" role="option">
+                                                        <span class="slds-media__body">
+                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity"> <b> {record.Prefix__c} </b> {record.Name} </span>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_7-of-12 slds-large-size_9-of-12">
+                    <lightning-input type="tel" label="Phone Number" placeholder="9988776655" value={phoneNumber} onchange={handleNumberChange}></lightning-input>
+                </div>
+            </div>
+
+            <template lwc:if={isSuccess}>
+                <div class="slds-card slds-p-around_medium slds-m-top_large slds-shadow_medium slds-rounded_large success-card">
+                    <header class="slds-text-align_center slds-m-bottom_medium">
+                        <p class="slds-text-heading_medium slds-text-color_success">✅ Verification Details</p>
+                        <p class="slds-text-body_small slds-text-color_weak">Here are the details of your phone verification</p>
+                    </header>
+
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_x-small info-item"><strong>Valid:</strong> <span>{isValid}</span></div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_x-small info-item"><strong>Carrier:</strong> <span>{response.carrier}</span></div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_x-small info-item"><strong>Region:</strong> <span>{response.phone_region}</span></div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_x-small info-item"><strong>Country:</strong> <span>{response.country}</span></div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_x-small info-item"><strong>Local Number:</strong> <span>{response.local_number}</span></div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_x-small info-item"><strong>E.164:</strong> <span>{response.e164}</span></div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_x-small info-item"><strong>Phone Type:</strong> <span>{response.phone_type}</span></div>
+                    </div>
+                </div>
+            </template>
+
+            <div lwc:if={isError} class="slds-text-color_error slds-m-top_medium">
+                <p class="slds-text-heading_small slds-m-bottom_small">❌ Error</p>
+                <p>{error.message}</p>
+            </div>
+
+            <template if:true={isLoading}>
+                <div class="slds-m-top_medium slds-align_absolute-center">
+                    <lightning-spinner alternative-text="Verifying..." variant="inverse"></lightning-spinner>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

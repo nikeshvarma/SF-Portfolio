@@ -1,0 +1,27 @@
+<template>
+    <p class="section-heading">Experience</p>
+
+    <div class="slds-progress slds-progress_vertical timeline">
+        <ol class="slds-progress__list">
+            <template for:each={processedExperience} for:item="job">
+                <li key={job.id} class={job.itemClass}>
+                    <div class="slds-progress__marker">
+                        <span class="slds-assistive-text">{job.assistiveText}</span>
+                    </div>
+
+                    <div class="slds-progress__item_content slds-grid slds-wrap slds-grid_align-spread custom-item">
+                        <div class="job-left slds-col slds-size_1-of-1">
+                            <div class="job-title">{job.company} | <span class="job-dates">{job.start} — {job.end}</span></div>
+                            <div class="job-company">{job.title}</div>
+                            <ul class="slds-list_dotted">
+                                <template for:each={job.responsibilities} for:item="r">
+                                    <li key={r}>{r}</li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </template>
+        </ol>
+    </div>
+</template>

@@ -1,0 +1,165 @@
+<template>
+    <lightning-card title="Currency Converter" icon-name="standard:partner_fund_allocation">
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap slds-gutters slds-m-bottom_small">
+                <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+                    <p>Please select the amount, source currency, and target currency to begin the currency conversion.</p>
+                </div>
+
+                <div lwc:if={result} class="slds-col slds-size_1-of-1 slds-m-vertical_small">
+                    <div class="slds-text-align_center">
+                        <span class="slds-text-heading_medium">{amount} {fromCurrencyValue} = {result} {toCurrencyValue} </span>
+                    </div>
+                </div>
+
+                <!-- AMOUNT INPUT -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                    <lightning-input
+                        type="number"
+                        name="amount"
+                        label="Amount"
+                        value={amount}
+                        step="0.01"
+                        min="0"
+                        message-when-range-underflow="Amount must be positive"
+                        onchange={handleAmountChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- FROM CURRENCY DROPDOWN -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="from-combobox">From</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-combobox_container">
+                                <div class={computeSldsIsOpenFrom}>
+                                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                        <input
+                                            type="text"
+                                            class="slds-input slds-combobox__input"
+                                            id="from-combobox"
+                                            aria-autocomplete="list"
+                                            aria-controls="from-listbox"
+                                            role="combobox"
+                                            data-type="from"
+                                            value={fromCurrencyValue}
+                                            onfocus={toggleCurrencyDropdown}
+                                            onkeyup={searchCurrency}
+                                            placeholder="Search..." />
+                                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                            <svg class="slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+
+                                    <div id="from-listbox" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox" tabindex="0" aria-busy="false">
+                                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                            <template for:each={currencySearchResult.from} for:item="record">
+                                                <li
+                                                    key={record.Id}
+                                                    role="presentation"
+                                                    class="slds-listbox__item"
+                                                    onclick={handleSelectedCurrency}
+                                                    data-type="from"
+                                                    data-value={record.ISOCode__c}>
+                                                    <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                                        <span class="slds-media__figure slds-listbox__option-icon">
+                                                            <span class="slds-icon_container slds-icon-custom-custom41">
+                                                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                                                    <use xlink:href="/_slds/icons/custom-sprite/svg/symbols.svg#custom41"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                        <span class="slds-media__body">
+                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity"> {record.Name} </span>
+                                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">
+                                                                {record.ISOCode__c} • {record.Country__c}
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TO CURRENCY DROPDOWN -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="to-combobox">To</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-combobox_container">
+                                <div class={computeSldsIsOpenTo}>
+                                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                        <input
+                                            type="text"
+                                            class="slds-input slds-combobox__input"
+                                            id="to-combobox"
+                                            aria-autocomplete="list"
+                                            aria-controls="to-listbox"
+                                            role="combobox"
+                                            data-type="to"
+                                            value={toCurrencyValue}
+                                            onfocus={toggleCurrencyDropdown}
+                                            onkeyup={searchCurrency}
+                                            placeholder="Search..." />
+                                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                            <svg class="slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+
+                                    <div id="to-listbox" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox" tabindex="0" aria-busy="false">
+                                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                            <template for:each={currencySearchResult.to} for:item="record">
+                                                <li
+                                                    key={record.Id}
+                                                    role="presentation"
+                                                    class="slds-listbox__item"
+                                                    onclick={handleSelectedCurrency}
+                                                    data-type="to"
+                                                    data-value={record.ISOCode__c}>
+                                                    <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                                        <span class="slds-media__figure slds-listbox__option-icon">
+                                                            <span class="slds-icon_container slds-icon-custom-custom41">
+                                                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                                                    <use xlink:href="/_slds/icons/custom-sprite/svg/symbols.svg#custom41"></use>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                        <span class="slds-media__body">
+                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity"> {record.Name} </span>
+                                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">
+                                                                {record.ISOCode__c} • {record.Country__c}
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button icon-name="utility:automate" variant="brand" label="Convert" onclick={handleConvert}> </lightning-button>
+                <lightning-button class="slds-m-left_small" icon-name="utility:sync" variant="brand" label="Swap" onclick={handleSwap}> </lightning-button>
+            </div>
+
+            <div lwc:if={isLoading} class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-spinner alternative-text="Processing..." variant="inverse"></lightning-spinner>
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

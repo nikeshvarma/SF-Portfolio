@@ -1,0 +1,93 @@
+:host {
+    --accent: #0aa5ff;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    color: #172b4d;
+}
+
+.section {
+    border-bottom: 2px solid var(--border);
+    padding: 1rem 0.5rem;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 16px rgba(19, 38, 63, 0.04);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    gap: 1rem;
+}
+
+.brand {
+    cursor: pointer;
+}
+
+.name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.title {
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    background: rgba(10, 165, 255, 0.06);
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.45rem 0.7rem;
+    margin: 0 0.25rem;
+    border-radius: 8px;
+    transition: 0.18s;
+}
+
+.footer-text {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.85rem;
+}
+
+.desktop-nav {
+    display: block;
+}
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+.mob-nav-btn {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-bottom-nav {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        display: flex;
+        z-index: 9999;
+    }
+}

@@ -1,0 +1,45 @@
+<template>
+    <header class="navbar" role="banner">
+        <div class="nav-inner">
+            <div class="brand" onclick={handleHomeClick} role="link" tabindex="0">
+                <h1 class="name">Nikesh Varma</h1>
+                <div class="title">Salesforce Developer</div>
+            </div>
+
+            <nav class="desktop-nav nav-links">
+                <button class="nav-btn" onclick={downloadResume}> 📧 Let's Connect!</button>
+                <button class="nav-btn" onclick={navToProjects}> 🧩 Projects</button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <c-portfolio-about></c-portfolio-about>
+    </section>
+
+    <section id="experience" class="section">
+        <c-portfolio-experience></c-portfolio-experience>
+    </section>
+
+    <section id="skills" class="section">
+        <c-portfolio-skills></c-portfolio-skills>
+    </section>
+
+    <section id="education" class="section">
+        <c-portfolio-education></c-portfolio-education>
+    </section>
+
+    <section id="certifications" class="section">
+        <c-portfolio-certifications></c-portfolio-certifications>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">© {copyrightYear} Built with ❤️ & LWC</div>
+    </footer>
+
+    <nav class="mobile-bottom-nav">
+        <div class="mob-nav-btn">
+            <lightning-icon icon-name="action:download" alternative-text="Download Resume" size="small"> </lightning-icon>
+        </div>
+    </nav>
+</template>
