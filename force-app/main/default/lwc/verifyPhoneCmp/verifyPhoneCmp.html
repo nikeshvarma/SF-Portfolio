@@ -18,7 +18,7 @@
                                         <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
                                             <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#world"></use>
                                         </svg>
-                                        <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="from-listbox" role="combobox" value={selectedPrefix} onfocus={toggleCountryDropdown} onkeyup={searchCountry} placeholder="+91" />
+                                        <input type="text" class="slds-input slds-combobox__input" aria-autocomplete="list" aria-controls="from-listbox" role="combobox" value={selectedPrefix} onfocus={toggleCountryDropdown} onkeyup={searchCountry} />
                                     </div>
 
                                     <div id="from-listbox" class="slds-dropdown slds-dropdown_length-with-icon-5 slds-dropdown_fluid" role="listbox" tabindex="0" aria-busy="false">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="slds-col slds-size_7-of-12 slds-large-size_9-of-12">
-                    <lightning-input type="tel" label="Phone Number" placeholder="9988776655" value={phoneNumber} onchange={handleNumberChange}></lightning-input>
+                    <lightning-input required type="tel" label="Phone Number" value={phoneNumber} onchange={handleNumberChange}></lightning-input>
                 </div>
             </div>
 

@@ -31,8 +31,8 @@ export default class VerifyPhoneCmp extends LightningElement {
     isLoading = false;
     showCountryList = false;
     phoneNumber = "";
-    selectedCountry = "";
-    selectedPrefix = "";
+    selectedCountry = "IN";
+    selectedPrefix = "+91";
 
     response = { ...RESPONSE_BODY };
     error = { ...ERROR_BODY };

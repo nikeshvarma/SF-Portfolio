@@ -1,66 +1,31 @@
 <template>
     <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
-            <article class="slds-card slds-m-around_small">
-                <div class="slds-card__header slds-grid">
-                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                        <div class="slds-media__figure">
-                            <lightning-icon icon-name="standard:app" size="small"></lightning-icon>
-                        </div>
-                        <div class="slds-media__body">
-                            <h2 class="slds-card__header-title">Project One</h2>
-                        </div>
-                    </header>
+        <div class="slds-m-vertical_small">
+            <lightning-card icon-name="custom:custom17" title="Currency Converter">
+                <div slot="actions">
+                    <lightning-button variant="brand-outline" icon-position="right" icon-name="utility:macros" label="Try it" onclick={navToCurrencyConverter}></lightning-button>
                 </div>
-                <div class="slds-card__body slds-card__body_inner">
-                    <p>This is a simple description of Project One.</p>
+                <div class="slds-p-around_small">
+                    <p>
+                        Currency Converter project allows users to convert an amount from one currency to another in real time using live exchange rates. It features an intuitive
+                        interface where users can select the source and target currencies.
+                    </p>
                 </div>
-                <footer class="slds-card__footer">
-                    <lightning-button variant="brand" label="View Details"></lightning-button>
-                </footer>
-            </article>
+            </lightning-card>
         </div>
 
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
-            <article class="slds-card slds-m-around_small">
-                <div class="slds-card__header slds-grid">
-                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                        <div class="slds-media__figure">
-                            <lightning-icon icon-name="standard:custom" size="small"></lightning-icon>
-                        </div>
-                        <div class="slds-media__body">
-                            <h2 class="slds-card__header-title">Project Two</h2>
-                        </div>
-                    </header>
+        <div class="slds-m-vertical_small">
+            <lightning-card icon-name="custom:custom75" title="Verify Phone Number">
+                <div slot="actions">
+                    <lightning-button variant="brand-outline" icon-position="right" icon-name="utility:macros" label="Try it" onclick={navToPhoneVerify}></lightning-button>
                 </div>
-                <div class="slds-card__body slds-card__body_inner">
-                    <p>This is a simple description of Project Two.</p>
+                <div class="slds-p-around_small">
+                    <p>
+                        Phone Number Verification project enables users to validate any phone number globally by entering the country code and number. It retrieves detailed
+                        information such as the carrier provider, region, and country from third-party APIs.
+                    </p>
                 </div>
-                <footer class="slds-card__footer">
-                    <lightning-button variant="brand" label="View Details"></lightning-button>
-                </footer>
-            </article>
-        </div>
-
-        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
-            <article class="slds-card slds-m-around_small">
-                <div class="slds-card__header slds-grid">
-                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                        <div class="slds-media__figure">
-                            <lightning-icon icon-name="standard:product" size="small"></lightning-icon>
-                        </div>
-                        <div class="slds-media__body">
-                            <h2 class="slds-card__header-title">Project Three</h2>
-                        </div>
-                    </header>
-                </div>
-                <div class="slds-card__body slds-card__body_inner">
-                    <p>This is a simple description of Project Three.</p>
-                </div>
-                <footer class="slds-card__footer">
-                    <lightning-button variant="brand" label="View Details"></lightning-button>
-                </footer>
-            </article>
+            </lightning-card>
         </div>
     </div>
 </template>

@@ -7,8 +7,8 @@
             </div>
 
             <nav class="desktop-nav nav-links">
-                <button class="nav-btn" onclick={downloadResume}> 📧 Let's Connect!</button>
-                <button class="nav-btn" onclick={navToProjects}> 🧩 Projects</button>
+                <button class="nav-btn" onclick={downloadResume}>📧 Let's Connect!</button>
+                <button class="nav-btn" onclick={navToProjects}>🧩 Projects</button>
             </nav>
         </div>
     </header>
@@ -39,7 +39,10 @@
 
     <nav class="mobile-bottom-nav">
         <div class="mob-nav-btn">
-            <lightning-icon icon-name="action:download" alternative-text="Download Resume" size="small"> </lightning-icon>
+            <lightning-icon icon-name="action:manage_perm_sets" alternative-text="Projects" onclick={navToProjects}> </lightning-icon>
+        </div>
+        <div class="mob-nav-btn">
+            <lightning-icon icon-name="action:download" alternative-text="Download Resume" onclick={downloadResume}> </lightning-icon>
         </div>
     </nav>
 </template>
