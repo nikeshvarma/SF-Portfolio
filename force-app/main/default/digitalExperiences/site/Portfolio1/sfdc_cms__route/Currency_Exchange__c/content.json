@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Currency Exchange",
+  "contentBody" : {
+    "activeViewId" : "Currency_Exchange",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-currency-exchange",
+    "urlPrefix" : "currency-exchange"
+  },
+  "urlName" : "currency-exchange"
+}

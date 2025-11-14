@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title={imageTitle} icon-name="custom:custom38">
+        <div class="slds-p-around_medium">
+            <template if:true={imageUrl}>
+                <div class="slds-text-align_center">
+                    <img src={imageUrl} alt="Record Image" style="max-width: 100%; border-radius: 8px;" />
+                </div>
+            </template>
+
+            <template if:false={imageUrl}>
+                <p>No image available for this record.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

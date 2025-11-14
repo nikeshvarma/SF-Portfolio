@@ -1,0 +1,73 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Error",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"8b1e85cb-7d3d-4818-9e48-82c2449ac524\",\"columns\":[{\"UUID\":\"143115f2-f469-4d9c-bc34-aa32e961f62f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "imageInfos" : "",
+                "richTextValue" : "<div style=\"margin:0; padding:0; height:100vh; width:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; background:linear-gradient(135deg,#e0e7ff 0%,#f8fafc 100%); font-family:Arial, sans-serif; color:#1e293b; position:relative; overflow:hidden;\">\n\n  <!-- Decorative floating background blobs -->\n  <div style=\"position:absolute; top:-120px; left:-120px; width:300px; height:300px; background:radial-gradient(circle at center,#dbeafe 0%,transparent 70%); border-radius:50%; opacity:0.5;\"></div>\n  <div style=\"position:absolute; bottom:-120px; right:-120px; width:300px; height:300px; background:radial-gradient(circle at center,#ddd6fe 0%,transparent 70%); border-radius:50%; opacity:0.5;\"></div>\n\n  <!-- 404 Heading -->\n  <div style=\"font-size:110px; font-weight:800; color:#2563eb; z-index:1; line-height:1;\">404</div>\n\n  <!-- Message -->\n  <div style=\"font-size:30px; font-weight:700; margin-top:10px; z-index:1;\">Page Not Found</div>\n  <p style=\"font-size:17px; color:#475569; text-align:center; max-width:500px; margin:12px 20px 30px; line-height:1.6; z-index:1;\">\n    Looks like you’re lost in space \uD83C\uDF0C The page you’re looking for doesn’t exist or has moved somewhere else.\n  </p>\n\n  <!-- Home Button -->\n  <button  \n     style=\"background:#2563eb; color:#fff; text-decoration:none; padding:14px 36px; border-radius:999px; font-weight:600; font-size:16px; box-shadow:0 6px 20px rgba(37,99,235,0.25); transition:all 0.2s ease; z-index:1;\">\n    Go to Home\n  </button>\n\n  <!-- Decorative emoji -->\n  <div style=\"font-size:70px; margin-top:40px; opacity:0.15; z-index:0;\">\uD83E\uDDED</div>\n</div>"
+              },
+              "definition" : "community_builder:htmlEditor",
+              "id" : "56e5dc52-3144-45fe-a5bc-b1d65592fa87",
+              "type" : "component"
+            } ],
+            "id" : "143115f2-f469-4d9c-bc34-aa32e961f62f",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "8b1e85cb-7d3d-4818-9e48-82c2449ac524",
+          "type" : "component"
+        } ],
+        "id" : "92c12820-75ce-4ec6-bca2-a9e2ff53c952",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Error",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "b5041c2b-d552-4c61-8009-0d662031e6ff",
+          "type" : "component"
+        } ],
+        "id" : "f8096f48-422d-4bc9-9eac-aa5846f8b17e",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "c5294e3d-1bc0-4124-80a0-1842d04112ae",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "error"
+  },
+  "urlName" : "error"
+}

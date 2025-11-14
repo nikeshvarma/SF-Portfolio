@@ -24,6 +24,41 @@
                 <default>false</default>
                 <label>Reverse</label>
             </value>
+            <value>
+                <fullName>right-arm-fast-medium</fullName>
+                <default>false</default>
+                <label>Right Arm Fast Medium</label>
+            </value>
+            <value>
+                <fullName>right-arm-offbreak</fullName>
+                <default>false</default>
+                <label>Right Arm Off Spin</label>
+            </value>
+            <value>
+                <fullName>legbreak-googly</fullName>
+                <default>false</default>
+                <label>Leg Spin Googly</label>
+            </value>
+            <value>
+                <fullName>left-arm-fast-medium</fullName>
+                <default>false</default>
+                <label>Left Arm Fast Medium</label>
+            </value>
+            <value>
+                <fullName>slow-left-arm-orthodox</fullName>
+                <default>false</default>
+                <label>Slow Left Arm (Finger Spin)</label>
+            </value>
+            <value>
+                <fullName>right-arm-fast</fullName>
+                <default>false</default>
+                <label>Right Arm Fast</label>
+            </value>
+            <value>
+                <fullName>left-arm-fast</fullName>
+                <default>false</default>
+                <label>Left Arm Fast</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

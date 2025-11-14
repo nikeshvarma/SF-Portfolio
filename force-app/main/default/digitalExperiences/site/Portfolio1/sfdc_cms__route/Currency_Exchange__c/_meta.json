@@ -1,0 +1,6 @@
+{
+  "apiName" : "Currency_Exchange__c",
+  "type" : "sfdc_cms__route",
+  "parentId" : "sfdc_cms__route/Projects__c",
+  "path" : "routes"
+}

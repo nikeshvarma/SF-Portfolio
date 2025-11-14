@@ -1,0 +1,5 @@
+{
+  "apiName" : "Verify_Phone_Number",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

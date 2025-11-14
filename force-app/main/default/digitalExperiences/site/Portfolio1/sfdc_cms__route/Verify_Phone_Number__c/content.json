@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Verify Phone Number",
+  "contentBody" : {
+    "activeViewId" : "Verify_Phone_Number",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-verify-phone-number",
+    "urlPrefix" : "verify-phone-number"
+  },
+  "urlName" : "verify-phone-number"
+}

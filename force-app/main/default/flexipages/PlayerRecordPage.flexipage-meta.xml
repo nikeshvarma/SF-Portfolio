@@ -146,26 +146,6 @@
                 <identifier>RecordBowlingStyle_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.MiddleName__c</fieldItem>
-                <identifier>RecordMiddleName__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.FullName__c</fieldItem>
-                <identifier>RecordFullName__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-08ffba37-6f85-4728-8d0e-acd1d57a200b</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -449,6 +429,24 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>imageField</name>
+                    <value>Photo__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleField</name>
+                    <value>FullName__c</value>
+                </componentInstanceProperties>
+                <componentName>imagePreviewCmp</componentName>
+                <identifier>c_imagePreviewCmp</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-05e5bda0-2ee9-4671-b534-d6a2b7c69844</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>showLegacyActivityComposer</name>
                     <value>false</value>
                 </componentInstanceProperties>
@@ -477,6 +475,24 @@
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-05e5bda0-2ee9-4671-b534-d6a2b7c69844</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Photo</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>

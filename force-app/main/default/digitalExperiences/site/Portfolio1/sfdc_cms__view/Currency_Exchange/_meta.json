@@ -1,0 +1,5 @@
+{
+  "apiName" : "Currency_Exchange",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}
