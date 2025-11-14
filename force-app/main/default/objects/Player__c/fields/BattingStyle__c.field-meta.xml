@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BattingStyle__c</fullName>
+    <label>Batting Style</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>right-hand-bat</fullName>
+                <default>false</default>
+                <label>Right Hand Batter</label>
+            </value>
+            <value>
+                <fullName>left-hand-bat</fullName>
+                <default>false</default>
+                <label>Left Hand Batter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

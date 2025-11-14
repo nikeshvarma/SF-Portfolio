@@ -129,7 +129,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>CountryRecordPage</content>
+        <content>PlayerRecordPage</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -137,7 +137,7 @@
     <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>CountryRecordPage</content>
+        <content>PlayerRecordPage</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -147,30 +147,35 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>CustomCompactLayout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>false</enableActivities>
+    <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>false</enableReports>
+    <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-    <label>Country</label>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Player</label>
     <nameField>
-        <label>Country Name</label>
-        <type>Text</type>
+        <displayFormat>PL-{000000}</displayFormat>
+        <label>Player ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Countries</pluralLabel>
+    <pluralLabel>Players</pluralLabel>
     <searchLayouts>
-        <searchResultsAdditionalFields>Prefix__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ISOCode__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ExternalID__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FirstName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LastName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Photo__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DateOfBirth__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Gender__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BattingStyle__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BowlingStyle__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
